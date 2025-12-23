@@ -2,80 +2,77 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>For You ❤️</title>
+<title>Untuk Kamu 🤍</title>
 
 <style>
 body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Segoe UI', sans-serif;
     overflow: hidden;
 }
 
 .card {
-    background: rgba(255, 105, 180, 0.9);
-    padding: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 35px 25px;
     border-radius: 25px;
     text-align: center;
-    width: 320px;
-    color: white;
-    animation: zoomIn 1.2s ease;
+    width: 340px;
+    color: #fff;
+    animation: fadeScale 1.2s ease;
     position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
 
-/* FOTO */
 .photo {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    margin-bottom: 15px;
+    border: 4px solid rgba(255,255,255,0.6);
 }
 
-.big-love {
-    font-size: 70px;
+.heart {
+    font-size: 55px;
     animation: pulse 1.5s infinite;
-    margin-bottom: 5px;
 }
 
-.typing {
-    font-size: 24px;
+.title {
+    font-size: 22px;
     margin-top: 10px;
+    animation: typing 3s steps(25) forwards;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid white;
     width: 0;
-    animation: typing 3s steps(20) forwards;
 }
 
-.typing.delay {
-    animation-delay: 3.2s;
+.message {
+    margin-top: 18px;
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeUp 1.5s ease forwards;
+    animation-delay: 3.5s;
 }
 
-p {
+.footer {
     margin-top: 15px;
-    font-size: 17px;
+    font-size: 18px;
     opacity: 0;
     animation: fadeUp 1.5s ease forwards;
-    animation-delay: 6.5s;
-}
-
-.thanks {
-    margin-top: 10px;
-    font-size: 20px;
-    opacity: 0;
-    animation: fadeUp 1.5s ease forwards;
-    animation-delay: 8s;
+    animation-delay: 5s;
 }
 
 .love {
     position: absolute;
-    font-size: 22px;
+    font-size: 20px;
     animation: fall linear infinite;
 }
 
@@ -89,14 +86,14 @@ p {
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes zoomIn {
-    from { transform: scale(0); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+@keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes pulse {
     0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    50% { transform: scale(1.15); }
     100% { transform: scale(1); }
 }
 
@@ -110,30 +107,34 @@ p {
 <body>
 
 <div class="card">
-    <!-- FOTO -->
-    <img src="liya.jpg" class="photo" alt="liya">
+    <img src="liya.jpg" class="photo" alt="foto">
 
-    <div class="big-love">❤️</div>
+    <div class="heart">🤍</div>
 
-    <div class="typing">Hai kak ❤️</div>
-    <div class="typing delay">Aku Sayang Kamu</div>
+    <div class="title">Hai kamu…</div>
 
-    <p>
-        🥰<br>
-        Maafkan aku ya…<br>
-        aku sadar aku sudah menyakitimu.<br>
-        Aku nggak mau membela diri,<br>
-        cuma ingin minta maaf dengan jujur.
-    </p>
+    <div class="message">
+        Aku masih sayang kamu 🤍<br><br>
+        Maaf ya kalau selama ini aku<br>
+        belum bisa ngasih kepastian.<br><br>
+        Bukan karena aku nggak mau,<br>
+        tapi karena aku sadar<br>
+        aku belum punya apa-apa<br>
+        untuk menjalin hubungan<br>
+        yang benar-benar serius<br>
+        sama kamu.
+    </div>
 
-    <div class="thanks">Terima kasih sudah membaca 🤍</div>
+    <div class="footer">
+        Terima kasih sudah mau mengerti 🤍
+    </div>
 </div>
 
 <script>
 function loveFall() {
     const love = document.createElement("div");
     love.className = "love";
-    love.innerText = "❤️";
+    love.innerText = "🤍";
     love.style.left = Math.random() * 100 + "vw";
     love.style.animationDuration = (Math.random() * 3 + 4) + "s";
     document.body.appendChild(love);
@@ -142,12 +143,8 @@ function loveFall() {
         love.remove();
     }, 7000);
 }
-setInterval(loveFall, 350);
+setInterval(loveFall, 400);
 </script>
 
 </body>
 </html>
-
-
-
-
